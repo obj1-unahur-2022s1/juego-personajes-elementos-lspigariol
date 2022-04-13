@@ -1,0 +1,40 @@
+import jugadoresPersonajes.*
+
+test "floki con ballesta descargada encuentra castillo" {
+
+	floki.arma(ballesta)
+	ballesta.descargar()
+    floki.encontrar(castillo)
+	assert.equals(150,castillo.nivelDefensa())
+
+}
+
+test "floki con ballesta cargada encuentra castillo" {
+
+	floki.arma(ballesta)
+    floki.encontrar(castillo)
+	assert.equals(9,ballesta.flechas())
+	assert.equals(146,castillo.nivelDefensa())
+
+}
+
+
+test "floki con jabalina cargada encuentra castillo" {
+
+	floki.arma(jabalina)
+    floki.encontrar(castillo)
+	assert.notThat(jabalina.estaCargada())
+	assert.equals(120,castillo.nivelDefensa())
+
+}
+
+
+
+test "floki con jabalina descargada encuentra castillo" {
+
+	floki.arma(jabalina)
+	jabalina.usar()
+    floki.encontrar(castillo)
+	assert.equals(150,castillo.nivelDefensa())
+
+}
