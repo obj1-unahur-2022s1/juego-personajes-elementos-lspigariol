@@ -10,7 +10,7 @@ object floki {
 
 
 object mario {
-	var valorRecolectado = 110
+	var valorRecolectado = 1100000
 
 }
 
